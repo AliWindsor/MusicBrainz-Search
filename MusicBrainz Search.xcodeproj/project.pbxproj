@@ -16,7 +16,7 @@
 		361EA84D26A203C000C2BEB6 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361EA84C26A203C000C2BEB6 /* ViewModel.swift */; };
 		361EA85426A2F31100C2BEB6 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361EA85326A2F31100C2BEB6 /* ModelData.swift */; };
 		361EA85626A5EC7F00C2BEB6 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361EA85526A5EC7F00C2BEB6 /* TableViewCell.swift */; };
-		361EA85A26A6E50C00C2BEB6 /* README.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 361EA85926A6E50C00C2BEB6 /* README.rtf */; };
+		361EA85C26A71A3F00C2BEB6 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 361EA85B26A71A3F00C2BEB6 /* README.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,7 +31,7 @@
 		361EA84C26A203C000C2BEB6 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		361EA85326A2F31100C2BEB6 /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
 		361EA85526A5EC7F00C2BEB6 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
-		361EA85926A6E50C00C2BEB6 /* README.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = README.rtf; sourceTree = "<group>"; };
+		361EA85B26A71A3F00C2BEB6 /* README.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,7 +48,7 @@
 		361EA82A26A2035A00C2BEB6 = {
 			isa = PBXGroup;
 			children = (
-				361EA85926A6E50C00C2BEB6 /* README.rtf */,
+				361EA85B26A71A3F00C2BEB6 /* README.txt */,
 				361EA83526A2035B00C2BEB6 /* MusicBrainz Search */,
 				361EA83426A2035B00C2BEB6 /* Products */,
 			);
@@ -177,8 +177,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				361EA84326A2036700C2BEB6 /* LaunchScreen.storyboard in Resources */,
+				361EA85C26A71A3F00C2BEB6 /* README.txt in Resources */,
 				361EA84026A2036700C2BEB6 /* Assets.xcassets in Resources */,
-				361EA85A26A6E50C00C2BEB6 /* README.rtf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
