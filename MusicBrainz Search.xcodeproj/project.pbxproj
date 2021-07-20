@@ -9,21 +9,29 @@
 /* Begin PBXBuildFile section */
 		361EA83726A2035B00C2BEB6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361EA83626A2035B00C2BEB6 /* AppDelegate.swift */; };
 		361EA83926A2035B00C2BEB6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361EA83826A2035B00C2BEB6 /* SceneDelegate.swift */; };
-		361EA83B26A2035B00C2BEB6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361EA83A26A2035B00C2BEB6 /* ViewController.swift */; };
-		361EA83E26A2035B00C2BEB6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 361EA83C26A2035B00C2BEB6 /* Main.storyboard */; };
+		361EA83B26A2035B00C2BEB6 /* ArtistListViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361EA83A26A2035B00C2BEB6 /* ArtistListViewContoller.swift */; };
 		361EA84026A2036700C2BEB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 361EA83F26A2036700C2BEB6 /* Assets.xcassets */; };
 		361EA84326A2036700C2BEB6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 361EA84126A2036700C2BEB6 /* LaunchScreen.storyboard */; };
+		361EA84B26A203B400C2BEB6 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361EA84A26A203B400C2BEB6 /* Model.swift */; };
+		361EA84D26A203C000C2BEB6 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361EA84C26A203C000C2BEB6 /* ViewModel.swift */; };
+		361EA85426A2F31100C2BEB6 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361EA85326A2F31100C2BEB6 /* ModelData.swift */; };
+		361EA85626A5EC7F00C2BEB6 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 361EA85526A5EC7F00C2BEB6 /* TableViewCell.swift */; };
+		361EA85A26A6E50C00C2BEB6 /* README.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 361EA85926A6E50C00C2BEB6 /* README.rtf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		361EA83326A2035B00C2BEB6 /* MusicBrainz Song Search.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MusicBrainz Song Search.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		361EA83326A2035B00C2BEB6 /* MusicBrainz Search.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MusicBrainz Search.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		361EA83626A2035B00C2BEB6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		361EA83826A2035B00C2BEB6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		361EA83A26A2035B00C2BEB6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		361EA83D26A2035B00C2BEB6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		361EA83A26A2035B00C2BEB6 /* ArtistListViewContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistListViewContoller.swift; sourceTree = "<group>"; };
 		361EA83F26A2036700C2BEB6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		361EA84226A2036700C2BEB6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		361EA84426A2036700C2BEB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		361EA84A26A203B400C2BEB6 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		361EA84C26A203C000C2BEB6 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		361EA85326A2F31100C2BEB6 /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
+		361EA85526A5EC7F00C2BEB6 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		361EA85926A6E50C00C2BEB6 /* README.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = README.rtf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,7 +48,8 @@
 		361EA82A26A2035A00C2BEB6 = {
 			isa = PBXGroup;
 			children = (
-				361EA83526A2035B00C2BEB6 /* MusicBrainz Song Search */,
+				361EA85926A6E50C00C2BEB6 /* README.rtf */,
+				361EA83526A2035B00C2BEB6 /* MusicBrainz Search */,
 				361EA83426A2035B00C2BEB6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -48,31 +57,74 @@
 		361EA83426A2035B00C2BEB6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				361EA83326A2035B00C2BEB6 /* MusicBrainz Song Search.app */,
+				361EA83326A2035B00C2BEB6 /* MusicBrainz Search.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		361EA83526A2035B00C2BEB6 /* MusicBrainz Song Search */ = {
+		361EA83526A2035B00C2BEB6 /* MusicBrainz Search */ = {
+			isa = PBXGroup;
+			children = (
+				361EA84F26A203ED00C2BEB6 /* Delegates */,
+				361EA85026A203FF00C2BEB6 /* Model */,
+				361EA85226A2F1CF00C2BEB6 /* View */,
+				361EA85126A2F1C300C2BEB6 /* ViewModel */,
+				361EA84E26A203DC00C2BEB6 /* Extra */,
+				361EA83F26A2036700C2BEB6 /* Assets.xcassets */,
+				361EA84426A2036700C2BEB6 /* Info.plist */,
+			);
+			path = "MusicBrainz Search";
+			sourceTree = "<group>";
+		};
+		361EA84E26A203DC00C2BEB6 /* Extra */ = {
+			isa = PBXGroup;
+			children = (
+				361EA84126A2036700C2BEB6 /* LaunchScreen.storyboard */,
+			);
+			path = Extra;
+			sourceTree = "<group>";
+		};
+		361EA84F26A203ED00C2BEB6 /* Delegates */ = {
 			isa = PBXGroup;
 			children = (
 				361EA83626A2035B00C2BEB6 /* AppDelegate.swift */,
 				361EA83826A2035B00C2BEB6 /* SceneDelegate.swift */,
-				361EA83A26A2035B00C2BEB6 /* ViewController.swift */,
-				361EA83C26A2035B00C2BEB6 /* Main.storyboard */,
-				361EA83F26A2036700C2BEB6 /* Assets.xcassets */,
-				361EA84126A2036700C2BEB6 /* LaunchScreen.storyboard */,
-				361EA84426A2036700C2BEB6 /* Info.plist */,
 			);
-			path = "MusicBrainz Song Search";
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		361EA85026A203FF00C2BEB6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				361EA84A26A203B400C2BEB6 /* Model.swift */,
+				361EA85326A2F31100C2BEB6 /* ModelData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		361EA85126A2F1C300C2BEB6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				361EA84C26A203C000C2BEB6 /* ViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		361EA85226A2F1CF00C2BEB6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				361EA85526A5EC7F00C2BEB6 /* TableViewCell.swift */,
+				361EA83A26A2035B00C2BEB6 /* ArtistListViewContoller.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		361EA83226A2035B00C2BEB6 /* MusicBrainz Song Search */ = {
+		361EA83226A2035B00C2BEB6 /* MusicBrainz Search */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 361EA84726A2036700C2BEB6 /* Build configuration list for PBXNativeTarget "MusicBrainz Song Search" */;
+			buildConfigurationList = 361EA84726A2036700C2BEB6 /* Build configuration list for PBXNativeTarget "MusicBrainz Search" */;
 			buildPhases = (
 				361EA82F26A2035B00C2BEB6 /* Sources */,
 				361EA83026A2035B00C2BEB6 /* Frameworks */,
@@ -82,9 +134,9 @@
 			);
 			dependencies = (
 			);
-			name = "MusicBrainz Song Search";
+			name = "MusicBrainz Search";
 			productName = "MusicBrainz Song Search";
-			productReference = 361EA83326A2035B00C2BEB6 /* MusicBrainz Song Search.app */;
+			productReference = 361EA83326A2035B00C2BEB6 /* MusicBrainz Search.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -101,7 +153,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 361EA82E26A2035A00C2BEB6 /* Build configuration list for PBXProject "MusicBrainz Song Search" */;
+			buildConfigurationList = 361EA82E26A2035A00C2BEB6 /* Build configuration list for PBXProject "MusicBrainz Search" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -114,7 +166,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				361EA83226A2035B00C2BEB6 /* MusicBrainz Song Search */,
+				361EA83226A2035B00C2BEB6 /* MusicBrainz Search */,
 			);
 		};
 /* End PBXProject section */
@@ -126,7 +178,7 @@
 			files = (
 				361EA84326A2036700C2BEB6 /* LaunchScreen.storyboard in Resources */,
 				361EA84026A2036700C2BEB6 /* Assets.xcassets in Resources */,
-				361EA83E26A2035B00C2BEB6 /* Main.storyboard in Resources */,
+				361EA85A26A6E50C00C2BEB6 /* README.rtf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,23 +189,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				361EA83B26A2035B00C2BEB6 /* ViewController.swift in Sources */,
+				361EA84D26A203C000C2BEB6 /* ViewModel.swift in Sources */,
+				361EA83B26A2035B00C2BEB6 /* ArtistListViewContoller.swift in Sources */,
 				361EA83726A2035B00C2BEB6 /* AppDelegate.swift in Sources */,
 				361EA83926A2035B00C2BEB6 /* SceneDelegate.swift in Sources */,
+				361EA84B26A203B400C2BEB6 /* Model.swift in Sources */,
+				361EA85626A5EC7F00C2BEB6 /* TableViewCell.swift in Sources */,
+				361EA85426A2F31100C2BEB6 /* ModelData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		361EA83C26A2035B00C2BEB6 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				361EA83D26A2035B00C2BEB6 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		361EA84126A2036700C2BEB6 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -288,7 +336,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M928AKP6PT;
-				INFOPLIST_FILE = "MusicBrainz Song Search/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/MusicBrainz Search/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -307,7 +355,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M928AKP6PT;
-				INFOPLIST_FILE = "MusicBrainz Song Search/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/MusicBrainz Search/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -322,7 +370,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		361EA82E26A2035A00C2BEB6 /* Build configuration list for PBXProject "MusicBrainz Song Search" */ = {
+		361EA82E26A2035A00C2BEB6 /* Build configuration list for PBXProject "MusicBrainz Search" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				361EA84526A2036700C2BEB6 /* Debug */,
@@ -331,7 +379,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		361EA84726A2036700C2BEB6 /* Build configuration list for PBXNativeTarget "MusicBrainz Song Search" */ = {
+		361EA84726A2036700C2BEB6 /* Build configuration list for PBXNativeTarget "MusicBrainz Search" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				361EA84826A2036700C2BEB6 /* Debug */,
