@@ -8,6 +8,8 @@
 import UIKit
 import WebKit
 
+public var isSearchValid:Bool = true
+
 class ArtistListViewController: UIViewController{
     
     let tableView = UITableView()
@@ -17,7 +19,7 @@ class ArtistListViewController: UIViewController{
     let textField = UITextField()
     let searchController = UISearchController(searchResultsController: nil)
     var searchTerm = ""
-    
+
     let button = UIButton(type: .system)
 
     override func viewDidLoad() {
@@ -34,6 +36,8 @@ class ArtistListViewController: UIViewController{
         let textpaddingView = UIView(frame: CGRect(x: 0, y: 0, width: 15, height: self.textField.frame.height))
         textField.leftView = textpaddingView
         textField.leftViewMode = UITextField.ViewMode.always
+        
+     
     }
 
     
@@ -83,6 +87,7 @@ class ArtistListViewController: UIViewController{
         view.addSubview(tableView)
         
         if searchTerm != ""{
+            isSearchValid = true
             ArtistSearchModelData().loadArtists(searchTerm: searchTerm){ [weak self] (artists) in
                   self?.artists = artists
                   
@@ -91,13 +96,16 @@ class ArtistListViewController: UIViewController{
                   }
             }
         }else{
-            artists = nil
+           isSearchValid = false
         }
         
-        if artists == nil  {
-            print("No Data")
+        if !isSearchValid{
+            print("alert")
             showAlert(withTitle: "No Results", withMessage: "Please try searching for a different artist.")
+        }else{
+            print("no alert")
         }
+
         
         //populate with data
         tableView.delegate = self

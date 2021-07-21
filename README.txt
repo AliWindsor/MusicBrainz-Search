@@ -21,9 +21,6 @@ Frameworks/Libraries Used:
     •    URLRequest
     •    URLSession
     •    JSONDecoder
-    
-Known Issues:
-Currently having a few issues with the alert appearing everytime the tableview is reloaded, as opposed to appearing only when the table view is nil. Working on a fix.
 
 Future Work:
 In the future I would like to attempt implementing the SearchBar and Search Button as part of a UIStackView to allow for better spacing between the two elements.

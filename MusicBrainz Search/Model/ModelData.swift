@@ -12,8 +12,14 @@ class ArtistSearchModelData{
 
     public func loadArtists(searchTerm: String, completionHandler: @escaping([Artists]) -> Void){
         
-        guard let url = URL(string: "https://musicbrainz.org/ws/2/artist/?query=artist:\(searchTerm)") else {
-           print("URL is invalid")
+        var url: URL
+        
+        if let unwrappedURL = URL(string: "https://musicbrainz.org/ws/2/artist/?query=artist:\(searchTerm)"){
+            isSearchValid = true
+            url = unwrappedURL
+        }else {
+            print("URL is invalid")
+            isSearchValid = false
             return
         }
         
