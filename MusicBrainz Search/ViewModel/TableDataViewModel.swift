@@ -18,6 +18,33 @@ extension ArtistListViewController: UITableViewDataSource, UITableViewDelegate{
         setUpTable()
     }
     
+    //MARK: Check the validity of the search term
+    
+    func searchTermValidity(){
+        if searchTerm != ""{
+            isSearchValid = true
+            ArtistSearchModelData().loadArtists(searchTerm: searchTerm){ [weak self] (artists) in
+                  self?.artists = artists
+                  
+                  DispatchQueue.main.async{
+                    self?.tableView.reloadData()
+                  }
+            }
+        }else{
+           isSearchValid = false
+        }
+        
+        //display alert if search term/url is invalid
+        if !isSearchValid{
+            print("alert")
+            showAlert(withTitle: "No Results", withMessage: "Please try searching for a different artist.")
+        }else{
+            print("no alert")
+        }
+    }
+    
+    //MARK: UITableView Functions
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         if let artistsCount = artists {

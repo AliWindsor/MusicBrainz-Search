@@ -44,8 +44,12 @@ class ArtistListViewController: UIViewController{
   func searchButton(){
         view.addSubview(button)
     
-        button.setTitle("Search", for: .normal)
-        button.setTitleColor(.white, for: .normal)
+        //button.setTitle("Search", for: .normal)
+       // button.setTitleColor(.white, for: .normal)
+    
+        button.setImage(UIImage(systemName: "magnifyingglass"), for: .normal)
+        button.tintColor = .white
+    
         button.backgroundColor = .purple
 
         button.layer.cornerRadius = 15.0
@@ -59,20 +63,20 @@ class ArtistListViewController: UIViewController{
         button.leftAnchor.constraint(equalTo: textField.rightAnchor).isActive = true
         button.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         button.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        button.widthAnchor.constraint(equalToConstant: 50).isActive = true
+
   }
     
    func searchBar() {
         view.addSubview(textField)
     
-        textField.placeholder = "Search"
+        textField.placeholder = "Enter a name..."
     
         textField.textColor = .purple
     
         textField.layer.cornerRadius = 15.0
         textField.layer.borderWidth = 2.0
         textField.layer.borderColor = UIColor.purple.cgColor
-        textField.sizeToFit()
-        textField.clipsToBounds = true
   
         textField.translatesAutoresizingMaskIntoConstraints = false
         
@@ -81,31 +85,12 @@ class ArtistListViewController: UIViewController{
         textField.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         textField.widthAnchor.constraint(equalToConstant: 300).isActive = true
         textField.heightAnchor.constraint(equalToConstant: 30).isActive = true
- }
+   }
     
     func setUpTable(){
         view.addSubview(tableView)
         
-        if searchTerm != ""{
-            isSearchValid = true
-            ArtistSearchModelData().loadArtists(searchTerm: searchTerm){ [weak self] (artists) in
-                  self?.artists = artists
-                  
-                  DispatchQueue.main.async{
-                    self?.tableView.reloadData()
-                  }
-            }
-        }else{
-           isSearchValid = false
-        }
-        
-        if !isSearchValid{
-            print("alert")
-            showAlert(withTitle: "No Results", withMessage: "Please try searching for a different artist.")
-        }else{
-            print("no alert")
-        }
-
+        searchTermValidity()
         
         //populate with data
         tableView.delegate = self
@@ -123,9 +108,9 @@ class ArtistListViewController: UIViewController{
         tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
        
     }
-    
+  
     func setUpNavigation(){
-        self.navigationItem.title = "Artists"
+        self.navigationItem.title = "Search for Artists"
         self.navigationController?.navigationBar.barTintColor = .white
         self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.navigationBar.titleTextAttributes = [
