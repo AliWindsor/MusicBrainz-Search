@@ -9,7 +9,7 @@ import UIKit
 import WebKit
 
 class ArtistListViewController: UIViewController{
- 
+    
     let tableView = UITableView()
     var safeArea: UILayoutGuide!
     var artists: [Artists]?
@@ -19,61 +19,64 @@ class ArtistListViewController: UIViewController{
     var searchTerm = ""
     
     let button = UIButton(type: .system)
-    
-    var webView: WKWebView!
- 
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
         view.backgroundColor = .white
+        
         safeArea = view.layoutMarginsGuide
 
         searchBar()
         searchButton()
-        setUpTable()
         setUpNavigation()
-  
+        
+        let textpaddingView = UIView(frame: CGRect(x: 0, y: 0, width: 15, height: self.textField.frame.height))
+        textField.leftView = textpaddingView
+        textField.leftViewMode = UITextField.ViewMode.always
     }
+
     
   func searchButton(){
         view.addSubview(button)
     
-       // button.frame = CGRect(x: 20, y: 20, width: 50, height: 50)
         button.setTitle("Search", for: .normal)
-    
+        button.setTitleColor(.white, for: .normal)
+        button.backgroundColor = .purple
+
+        button.layer.cornerRadius = 15.0
+
         button.addTarget(self, action: #selector(buttonAction(_:)), for: .touchUpInside)
     
+        button.translatesAutoresizingMaskIntoConstraints = false
+    
+        //Layout Configs
         button.topAnchor.constraint(equalTo: safeArea.topAnchor).isActive = true
-        
         button.leftAnchor.constraint(equalTo: textField.rightAnchor).isActive = true
         button.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        
+        button.heightAnchor.constraint(equalToConstant: 30).isActive = true
   }
-    
-    @objc func buttonAction(_ sender: UIButton!){
-        print("Button Tapped")
-    }
     
    func searchBar() {
         view.addSubview(textField)
-        
-        textField.placeholder = "Search"
-        //textField.text = searchTerm
     
-        textField.frame = CGRect(x: 10,y: 200,width: 300.0,height: 30.0)
-        
-        textField.borderStyle = UITextField.BorderStyle.line
-
+        textField.placeholder = "Search"
+    
+        textField.textColor = .purple
+    
+        textField.layer.cornerRadius = 15.0
+        textField.layer.borderWidth = 2.0
+        textField.layer.borderColor = UIColor.purple.cgColor
+        textField.sizeToFit()
+        textField.clipsToBounds = true
+  
         textField.translatesAutoresizingMaskIntoConstraints = false
-        
         
         //Layout Configs
         textField.topAnchor.constraint(equalTo: safeArea.topAnchor).isActive = true
-        
         textField.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-        //textField.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-
+        textField.widthAnchor.constraint(equalToConstant: 300).isActive = true
+        textField.heightAnchor.constraint(equalToConstant: 30).isActive = true
  }
     
     func setUpTable(){
@@ -91,12 +94,15 @@ class ArtistListViewController: UIViewController{
             artists = nil
         }
         
+        if artists == nil  {
+            print("No Data")
+            showAlert(withTitle: "No Results", withMessage: "Please try searching for a different artist.")
+        }
         
         //populate with data
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(TableViewCell.self, forCellReuseIdentifier: "cell")
-        
         
         //turn off autoresizing
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -119,8 +125,6 @@ class ArtistListViewController: UIViewController{
             NSAttributedString.Key.font: UIFont(name: "Arial-BoldMT", size: 30)
         ]
     }
-    
-    
 
 }
 

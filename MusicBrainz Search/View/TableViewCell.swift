@@ -14,7 +14,10 @@ class TableViewCell: UITableViewCell {
    
         subView.addSubview(nameLabel)
         subView.addSubview(titleLabel)
+        
         self.contentView.addSubview(subView)
+        self.contentView.addSubview(arrowImage)
+
 
         subView.centerYAnchor.constraint(equalTo:self.contentView.centerYAnchor).isActive = true
         subView.leadingAnchor.constraint(equalTo:self.contentView.leadingAnchor, constant:10).isActive = true
@@ -28,6 +31,11 @@ class TableViewCell: UITableViewCell {
         
         titleLabel.topAnchor.constraint(equalTo:self.nameLabel.bottomAnchor).isActive = true
         titleLabel.leadingAnchor.constraint(equalTo:self.subView.leadingAnchor).isActive = true
+        
+        arrowImage.widthAnchor.constraint(equalToConstant:26).isActive = true
+        arrowImage.heightAnchor.constraint(equalToConstant:26).isActive = true
+        arrowImage.trailingAnchor.constraint(equalTo:self.contentView.trailingAnchor, constant:-20).isActive = true
+        arrowImage.centerYAnchor.constraint(equalTo:self.contentView.centerYAnchor).isActive = true
      
     }
 
@@ -55,7 +63,19 @@ class TableViewCell: UITableViewCell {
         return label
     }()
     
-    //Container for Name and Job Title
+    //Arrow
+    let arrowImage: UIImageView = {
+        let img = UIImageView()
+        img.contentMode = .scaleAspectFill
+        img.translatesAutoresizingMaskIntoConstraints = false
+        img.layer.cornerRadius = 13
+        img.clipsToBounds = true
+        img.image = UIImage(systemName: "arrow.right")
+        img.tintColor = .orange
+        return img
+    }()
+    
+    //Container for Name and Title
     let subView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -76,7 +96,6 @@ class TableViewCell: UITableViewCell {
             }else{
                 titleLabel.text = "Unknown"
             }
-            
         }
     }
     

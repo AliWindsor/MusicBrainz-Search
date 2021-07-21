@@ -10,6 +10,14 @@ import UIKit
 import SafariServices
 
 extension ArtistListViewController: UITableViewDataSource, UITableViewDelegate{
+    
+    @objc func buttonAction(_ sender: UIButton!){
+        let unformattedSearchTerm = textField.text ?? ""
+        searchTerm = unformattedSearchTerm.replacingOccurrences(of: " ", with: "_")
+
+        setUpTable()
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         if let artistsCount = artists {
@@ -29,24 +37,48 @@ extension ArtistListViewController: UITableViewDataSource, UITableViewDelegate{
         return 80.0
     }
     
+    func showAlert(withTitle title: String, withMessage message:String) {
+            let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            let ok = UIAlertAction(title: "OK", style: .default, handler: { action in
+            })
+            alert.addAction(ok)
+            DispatchQueue.main.async(execute: {
+                self.present(alert, animated: true)
+            })
+        }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         if let mbid = artists?[indexPath.row].id{
             
-            if let myURL = URL(string:"https://musicbrainz.org/artist/\(mbid)"){
+            var urlString = "https://musicbrainz.org/artist/\(mbid)"
+            
+            if let myURL = URL(string: urlString){
                 let config = SFSafariViewController.Configuration()
                 config.entersReaderIfAvailable = true
 
                 let vc = SFSafariViewController(url: myURL, configuration: config)
                 present(vc, animated: true)
             }else{
-                print("Invalid URL")
+               print("Invalid URL")
             }
+            
         }else{
             print("Invalid mbid")
         }
- 
     }
     
+    
+ 
 }
 
+extension String {
+    var isValidURL: Bool {
+        let detector = try! NSDataDetector(types: NSTextCheckingResult.CheckingType.link.rawValue)
+        if let match = detector.firstMatch(in: self, options: [], range: NSRange(location: 0, length: self.utf16.count)) {
+            // it is a link, if the match covers the whole string
+            return match.range.length == self.utf16.count
+        } else {
+            return false
+        }
+    }
+}

@@ -34,8 +34,6 @@ class ArtistSearchModelData{
                 return
             }
             
-            
-            
             if let error = error {
                 print("Error Thrown : \(error)")
                 return
